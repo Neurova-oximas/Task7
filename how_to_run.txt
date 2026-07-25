@@ -1,1 +1,9 @@
+# this is for debuging and starting manually
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
 python scripts/seed_db.py
+uvicorn backend.main:app --port 8000 --reload
+
+#then in another terminal
+uvicorn backend.main:app --port 8000 --reload

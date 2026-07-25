@@ -217,5 +217,13 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-#FrontEnd
-node_modules
+# node
+frontend/node_modules/
+frontend/dist/
+
+# FAISS index — generated data, not source
+backend/data/faiss_index/
+
+# OS
+.DS_Store
+Thumbs.db

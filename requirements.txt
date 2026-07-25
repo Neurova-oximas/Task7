@@ -1,1 +1,23 @@
+# requirements.txt
+
+# API
+fastapi
+uvicorn[standard]
+
+# LangChain
+langchain
+langchain-community
+langchain-openai
+langchain-huggingface
+
+# Vector store
+faiss-cpu
+
+# Embeddings
+sentence-transformers
+
+# Settings
+pydantic-settings
+
+# Dataset seeding
 datasets

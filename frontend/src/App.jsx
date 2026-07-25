@@ -5,7 +5,7 @@ import InputPanel from "./components/InputPanel.jsx";
 import { sendMessage } from "./api/chat.js";
 
 // Set to true to test UI without a running backend
-const MOCK_MODE = true;
+const MOCK_MODE = false;
 
 async function mockSendMessage(query) {
   await new Promise((r) => setTimeout(r, 900));
