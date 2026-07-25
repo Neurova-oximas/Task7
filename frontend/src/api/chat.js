@@ -1,18 +1,14 @@
-/**
- * Send a user query to the backend.
- * @param {string} query
- * @returns {Promise<{ type: "explanation"|"generation", content: { explanation: string, code: string|null } }>}
- */
-export async function sendMessage(query) {
+// src/api/chat.js
+export async function sendMessage(query, attachment = null) {
+  const body = { query };
+  if (attachment) {
+    body.filename = attachment.name;
+    body.file_content = attachment.content;  // raw text, backend does RAG
+  }
   const res = await fetch("/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query }),
+    body: JSON.stringify(body),
   });
-
-  if (!res.ok) {
-    throw new Error(`Server error: ${res.status} ${res.statusText}`);
-  }
-
   return res.json();
 }

@@ -1,0 +1,60 @@
+adaptive-code-assistant/
+│
+├── .gitignore
+├── .env.example
+├── .dockerignore
+├── requirements.txt
+├── docker-compose.yml
+├── README.md
+│
+├── backend/
+│   ├── Dockerfile
+│   ├── main.py
+│   │
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   └── logger.py
+│   │
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── routes/
+│   │       ├── __init__.py
+│   │       ├── explain.py
+│   │       └── generate.py
+│   │
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── router.py
+│   │   ├── explainer.py
+│   │   ├── generator.py
+│   │   ├── evaluator.py
+│   │   └── knowledge_base.py
+│   │
+│   └── data/
+│       ├── seed/
+│       └── faiss_index/
+│
+├── frontend/
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
+│   ├── index.html
+│   └── src/
+│       ├── main.jsx
+│       ├── App.jsx
+│       ├── index.css           ← Tailwind directives
+│       ├── api/
+│       │   └── chat.js         ← sendMessage() and any other calls
+│       └── components/
+│           ├── ChatThread.jsx
+│           ├── MessageCard.jsx
+│           ├── CodeBlock.jsx
+│           ├── InputPanel.jsx
+│           └── Sidebar.jsx
+│
+└── scripts/
+    └── seed_db.py
